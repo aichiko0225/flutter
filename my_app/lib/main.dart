@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'study/study1.dart';
+
+import 'views/view1.dart';
 
 void main() => runApp(MyApp());
+
+SampleApp app = SampleApp();
+
+MaterialApp getApp() {
+  return MaterialApp(
+    title: 'Welcome to Flutter',
+    theme: new ThemeData(          // 新增代码开始... 
+      primaryColor: Colors.red,
+    ),                             
+    home: RandomWords(),
+    routes: <String, WidgetBuilder> {
+      '/a': (BuildContext context) => SampleApp(),
+      '/b': (BuildContext context) => SampleApp()
+    }
+  ); 
+}
+
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final wordPair = WordPair.random();
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      theme: new ThemeData(          // 新增代码开始... 
-        primaryColor: Colors.white,
-      ),                             
-      home: RandomWords()
-      // home: Scaffold(
-        // appBar: AppBar(
-          // title: Text('Welcome to Flutter'),
-        // ),
-        // body: _buildSuggestions()
-        // body: Center(
-          // child: Text('Hello World'),
-          // child: Text(wordPair.asPascalCase)
-          // child: RandomWords()
-        // ),
-      // ),
-    );
+    // return app;
+    return getApp();
   }
 }
 
@@ -83,9 +87,23 @@ class RandomWordsState extends State<RandomWords> {
         title: new Text('Startup Name Generator'),
         actions: <Widget>[      // 新增代码开始 ...
           new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
+          new IconButton(icon: const Icon(Icons.av_timer), onPressed: _pushStudy1),
         ],
       ),
       body: _buildSuggestions(),
+    );
+  }
+
+  void _pushStudy1() {
+    Navigator.of(context).push(
+      new MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+          return new MaterialApp(
+            title: 'My app', // used by the OS task switcher
+            home: new MyScaffold(),
+          );
+        }
+      )
     );
   }
   // 新增代码开始
