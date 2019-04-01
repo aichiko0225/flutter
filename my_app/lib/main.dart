@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'study/study1.dart';
-
+import 'study/Material.dart';
 import 'views/view1.dart';
 
 void main() => runApp(MyApp());
 
 SampleApp app = SampleApp();
+
+TutorialHomeApp app1 = TutorialHomeApp();
 
 MaterialApp getApp() {
   return MaterialApp(
@@ -22,13 +24,13 @@ MaterialApp getApp() {
   ); 
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final wordPair = WordPair.random();
     // return app;
-    return getApp();
+    return app1;
+    // return getApp();
   }
 }
 
