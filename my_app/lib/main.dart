@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:my_app/study/Navigator.dart';
 import 'study/study1.dart';
 import 'study/Material.dart';
 import 'views/view1.dart';
@@ -9,6 +10,8 @@ void main() => runApp(MyApp());
 SampleApp app = SampleApp();
 
 TutorialHomeApp app1 = TutorialHomeApp();
+
+MaterialApp app2 = new MaterialApp(title: 'Navigation Basics', home: new FirstScreen());
 
 MaterialApp getApp() {
   return MaterialApp(
@@ -29,7 +32,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // final wordPair = WordPair.random();
     // return app;
-    return app1;
+    // return app1;
+    return app2;
     // return getApp();
   }
 }

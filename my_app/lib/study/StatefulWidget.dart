@@ -82,8 +82,6 @@ class CounterIncrementor extends StatelessWidget {
 }
 
 
-
-
 // 整合所有
 // 让我们考虑一个更完整的例子，将上面介绍的概念汇集在一起​​。我们假设一个购物应用程序，该应用程序显示出售的各种产品，并维护一个购物车。 
 // 我们先来定义ShoppingListItem：
@@ -137,7 +135,6 @@ class ShoppingListItem extends StatelessWidget {
       title: new Text(product.name, style: _getTextStyle(context)),
     );;
   }
-  
 }
 
 
@@ -196,6 +193,9 @@ class _ShoppingListState extends State<ShoppingList> {
 // 在StatefulWidget调用createState之后，框架将新的状态对象插入树中，然后调用状态对象的initState。
 // 子类化State可以重写initState，以完成仅需要执行一次的工作。 例如，您可以重写initState以配置动画或订阅platform services。
 // initState的实现中需要调用super.initState。
+
+
+var t = ListTile(title: new Text('1'));
 
 
 
