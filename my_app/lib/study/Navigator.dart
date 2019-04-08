@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 // 1. 创建两个页面
 // 我们创建两个页面，每个页面包含一个按钮。点击第一个页面上的按钮将导航到第二个页面。点击第二个页面上的按钮将返回到第一个页面。页面结构如下：
 
+
 class Todo {
   final String title;
   final String description;
@@ -51,7 +52,7 @@ var listview = new ListView.builder(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: new Text('确定'))
+                      child: new Text('确定')),
                 ],
               );
             });
